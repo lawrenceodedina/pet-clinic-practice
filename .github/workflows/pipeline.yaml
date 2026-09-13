@@ -127,8 +127,6 @@ jobs:
             -Dsonar.projectKey=${{ env.SONAR_PROJECT_KEY }}
             -Dsonar.organization=${{ env.SONAR_ORGANIZATION }}
             -Dsonar.java.binaries=target/classes
-            -Dsonar.qualitygate.wait=true
-            -Dsonar.qualitygate.timeout=600
  
       - name: SonarCloud Quality Gate Check
         id: quality-gate
