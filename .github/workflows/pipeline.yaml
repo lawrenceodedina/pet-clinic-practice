@@ -138,4 +138,5 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           branch: dev
           fail-on-quality-gate-error: true
+          disable-pr-comment: true
 
