@@ -128,11 +128,15 @@ jobs:
             -Dsonar.organization=${{ env.SONAR_ORGANIZATION }}
             -Dsonar.java.binaries=target/classes
  
-      - name: SonarQube Quality Gate check
-        id: sonarqube-quality-gate-check
-        uses: sonarsource/sonarqube-quality-gate-action@master
+      - name: SonarCloud Quality Gate Check
+        id: quality-gate
+        uses: phwt/sonarqube-quality-gate-action@v1
         with:
-          pollingTimeoutSec: 600
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          sonar-project-key: ${{ env.SONAR_PROJECT_KEY }}
+          sonar-host-url: https://sonarcloud.io
+          sonar-token: ${{ env.SONAR_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          branch: dev
+          fail-on-quality-gate-error: true
+          
 
