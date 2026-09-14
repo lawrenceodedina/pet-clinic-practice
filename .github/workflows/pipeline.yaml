@@ -172,7 +172,7 @@ jobs:
           scan-ref: '.'
           severity: 'CRITICAL,HIGH'
           format: 'table'
-          output: trivy-fs-report
+          output: trivy-fs-report.txt
           exit-code: '0'
           ignore-unfixed: true
  
@@ -181,7 +181,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: trivy-fs-report
-          path: trivy-fs-report/
+          path: trivy-fs-report.*
           if-no-files-found: ignore
 
 
