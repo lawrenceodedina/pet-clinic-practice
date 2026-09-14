@@ -172,6 +172,7 @@ jobs:
           scan-ref: '.'
           severity: 'CRITICAL,HIGH'
           format: 'table'
+          output: trivy-fs-report
           exit-code: '0'
           ignore-unfixed: true
  
